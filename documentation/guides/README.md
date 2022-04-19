@@ -7,7 +7,7 @@ To get started quickly, we have an executable that will create a new Angular pro
 This should be as simple as executing the following script in the command line wherever you want this new project to be created.
 
 ````shell
-npx @sassoftware/svi-solution-extension-create
+npx @sassoftware/vi-solution-extension-create
 ````
 
 You will be asked to enter the following (these can all be changed later in the `.env` file):
@@ -28,16 +28,16 @@ We have schematics for multiple solution extension types:
 * **Property** - A property editor that can appear for page or homepage control properties
 * **ToolbarProperty** - A property editor that can appear for toolbar control properties
 
-If you have set up an Angular project using the above `@sassoftware/svi-solution-extension-create` script then you will have access to an npm shorthand script for creating these extension types. Run the following in the root of the project:
+If you have set up an Angular project using the above `@sassoftware/vi-solution-extension-create` script then you will have access to an npm shorthand script for creating these extension types. Run the following in the root of the project:
 
 ````shell
 npm run create:solution-control
 ````
 
-Otherwise, you can use these schematics in any Angular project as long as you have installed the schematics `@sassoftware/svi-solution-extension-angular-schematics`. Then you can run the following instead:
+Otherwise, you can use these schematics in any Angular project as long as you have installed the schematics `@sassoftware/vi-solution-extension-angular-schematics`. Then you can run the following instead:
 
 ````shell
-ng g @sassoftware/svi-solution-extension-angular-schematics:wc
+ng g @sassoftware/vi-solution-extension-angular-schematics:wc
 ````
 
 You will be prompted to give your solution extension a name and select the type.
@@ -58,7 +58,7 @@ The newly created files are as follows:
 
 ## Deploying solution extensions
 
-If you have set up your project using the above `@sassoftware/svi-solution-extension-create` script then we have an npm script that makes this fairly simple. Run the following in the root of the project:
+If you have set up your project using the above `@sassoftware/vi-solution-extension-create` script then we have an npm script that makes this fairly simple. Run the following in the root of the project:
 
 ````shell
 npm run watch
