@@ -1,71 +1,75 @@
 # Guides
 
-## Getting started (creating an Angular project)
+## Getting Started
 
-To get started quickly, we have an executable that will create a new Angular project for you that is ready to start developing solution extensions in.
+To get started quickly, we have an executable that creates a new Angular project that is ready for you to use to start developing solution extensions.
 
-This should be as simple as executing the following script in the command line wherever you want this new project to be created.
+Execute the following script in the command line wherever you want this new project to be created:
 
 ````shell
 npx @sassoftware/vi-solution-extension-create
 ````
 
-You will be asked to enter the following (these can all be changed later in the `.env` file):
+You are asked to enter the following information:
 
-* **Hostname** - The host that you would like to eventually deploy controls to. `http://[host address]:[port number]`, e.g. `http://my-vi-deployment.my-org.com:1234`
-* **Username** - Username for the host above with access to Visual Investigator's database tables
-* **Password** - Password for the username above
+* **Hostname** - The host server that you want to deploy controls to. Use the following format: 
+ `http://[host address]:[port number]`.
+ For example: 
+ `http://my-vi-deployment.my-org.com:1234`.
+* **Username** - Username for the host above with access to SAS Visual Investigator's database tables.
+* **Password** - Password for the username above.
 
-This should then create your new project and install all appropriate dependencies.
+**Note:** This information is stored in the `.env` file, and can be changed later as required. 
+This creates your new project and installs all the appropriate dependencies.
 
-## Creating a solution extension
+## Creating a Solution Extension
 
-We have schematics for multiple solution extension types:
+We have schematics for multiple types of solution extension:
 
-* **Page** - A control that can be added to object pages
-* **Home** - A control that can be added to homepages
-* **Toolbar** - A control that can appear in the toolbar for objects
-* **Property** - A property editor that can appear for page or homepage control properties
-* **ToolbarProperty** - A property editor that can appear for toolbar control properties
+* **Page** - A control that can be added to object pages.
+* **Home** - A control that can be added to Home pages.
+* **Toolbar** - A control that can appear in an object's toolbar.
+* **Property** - A property editor that can appear for page or Home page control properties.
+* **ToolbarProperty** - A property editor that can appear for toolbar control properties.
 
-If you have set up an Angular project using the above `@sassoftware/vi-solution-extension-create` script then you will have access to an npm shorthand script for creating these extension types. Run the following in the root of the project:
+If you set up an Angular project using the `@sassoftware/vi-solution-extension-create` script, you have access to an npm shorthand script for creating these solution extension types. Run this command in the root of the project:
 
 ````shell
 npm run create:solution-control
 ````
 
-Otherwise, you can use these schematics in any Angular project as long as you have installed the schematics `@sassoftware/vi-solution-extension-angular-schematics`. Then you can run the following instead:
+Alternatively, you can use these schematics in any Angular project if have installed the schematics package, `@sassoftware/vi-solution-extension-angular-schematics`. In this case, run the following command:
 
 ````shell
 ng g @sassoftware/vi-solution-extension-angular-schematics:wc
 ````
 
-You will be prompted to give your solution extension a name and select the type.
+You are prompted to give your solution extension a name and select the type.
 
-This will do multiple things:
+This script does the following:
 
-* Create the component, template, module, test file and `control.ts` file in the `components` project under `src > lib`.
-* Use the newly created solution extension's module to define a new custom element and use Visual Investigator's API to register it with Visual Investigator.
-* Import the newly created module in `components > src > app.module.ts`.
+* Creates the component, template, module, test file and `control.ts` file in the `components` project under `src > lib`.
+* Uses the newly created solution extension's module to define a new custom element and uses SAS Visual Investigator's API to register it with SAS Visual Investigator.
+* Imports the newly created module into `components > src > app.module.ts`.
 
-The newly created files are as follows:
+The script creates the following files:
 
-* `[name].component.html` - The template. The HTML that will be rendered for your solution extension.
-* `[name].component.ts` - The angular component to provide logic to the solution extension and pass data to the template.
+* `[name].component.html` - The template. This contains the HTML to be rendered for your solution extension.
+* `[name].component.ts` - The Angular component that provides logic to the solution extension and passes data to the template.
 * `[name].component.spec.ts` - A test file for unit testing your solution extension.
-* `[name].component.module.ts` - The angular module for your solution extension. This will be prebuilt to define a new custom element for the solution extension and use Visual Investigator's API to register it with Visual Investigator.
-* `[name].control.ts` - Config for the control. This will mostly be preconfigured but you may wish to add additional attributes; for example to customize what properties appear in Visual Investigator's properties panel when designing a page.
+* `[name].component.module.ts` - The Angular module for your solution extension. This is pre-built to define a new custom element for the solution extension and uses SAS Visual Investigator's API to register it with SAS Visual Investigator.
+* `[name].control.ts` - Configuration for the control. This is mostly preconfigured, but you might want to add additional attributes - for example, to customize which properties appear in SAS Visual Investigator's properties panel when designing a page.
 
-## Deploying solution extensions
+## Deploying Solution Extensions
 
-If you have set up your project using the above `@sassoftware/vi-solution-extension-create` script then we have an npm script that makes this fairly simple. Run the following in the root of the project:
+If you used the `@sassoftware/vi-solution-extension-create` script to set up your project, the following npm script makes deploying your solution extensions simple. Run this command in the root of the project:
 
 ````shell
 npm run watch
 ````
 
-This will build and deploy your solution extensions and continue to do so whenever you make changes, allowing you to make changes and see the result on a server very quickly.
+This builds and deploys your solution extensions whenever you make changes, allowing you see the results on a server very quickly.
 
-This uses the properties in the `.env` file that should have been configured for you when setting up the project. But you can change these if you wish to deploy to a different server.
+The script uses the properties in the `.env` file that were configured for you when the project was set up. You can change these properties if you want to deploy to a different server.
 
-Refresh Visual Investigator after a successful deployment and you should be able to start using your new solution extensions.
+After a successful deployment, refresh SAS Visual Investigator to start using your new solution extensions.
