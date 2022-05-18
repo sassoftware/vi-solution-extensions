@@ -2,23 +2,23 @@
 
 ## Overview
 
-Solution extensions allow new controls with custom functionality to be deployed to an existing Visual Investigator deployment. Multiple tools have been developed to ease the development and deployment of these extensions.
+Solution extensions allow new controls with custom functionality to be deployed to an existing SAS Visual Investigator deployment. There are multiple tools available to ease the development and deployment of these solution extensions.
 
-See the documentation and examples provided here for help with using these tools.
+See the documentation and examples provided here for help with these tools.
 
 ### Prerequisites
 
-Access to a deployment of SAS Visual Investigator 10.8 (or later) is necessary in order to use the documented tools.
+You must have access to a deployment of SAS Visual Investigator 10.8 (or later) to use the documented tools.
 
 ### Installation
 
 #### NPM
 
-We have several packages published to NPM that will be referenced and used in these guides and documentation.
+We have several packages published to npm that are referenced and used in these guides and documentation.
 
-We recommend using the ``@sassoftware/vi-solution-extension-create`` package to create a project that downloads and installs these for you. For that see the [Getting Started section of our guide](documentation/guides).
+We recommend using the ``@sassoftware/vi-solution-extension-create`` package to create a project that downloads and installs these for you. For more information, see the [Getting Started](documentation/guides) section of our guide.
 
-However, you can download and install packages individually via npm in the command line of any Angular or Typescript project by running:
+Alternatively, you can download and install packages individually using npm in the command line of any Angular or TypeScript project. To do this, run:
 
 ````shell
 npm i [PACKAGE_NAME]
@@ -33,7 +33,7 @@ See our packages below:
 
 ## Getting Started
 
-See the [Getting Started section of our guide](documentation/guides).
+See the [Getting Started](documentation/guides) section of our guide.
 
 
 ### Examples
@@ -50,5 +50,5 @@ This project is licensed under this commercial [license](LICENSE.txt).
 
 ## Additional Resources
 
-* SAS Visual Investigator API on [developer.sas.com](https://developer.sas.com/apis/vi/apiDocs/)
+* SAS Visual Investigator API on [developer.sas.com](https://developer.sas.com/apis/vi/apiDocs/).
 
