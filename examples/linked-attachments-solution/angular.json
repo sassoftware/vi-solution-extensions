@@ -83,12 +83,6 @@
                   "maximumError": "4kb"
                 }
               ],
-              "fileReplacements": [
-                {
-                  "replace": "projects/elements/src/environments/environment.ts",
-                  "with": "projects/elements/src/environments/environment.google-api.ts"
-                }
-              ],
               "outputHashing": "all"
             },
             "development": {

@@ -1,5 +1,5 @@
 import {
-  SviAttachedFile,
+  SviLinkedFile,
   SviDocumentManager,
 } from '@sassoftware/vi-api/config';
 
@@ -18,13 +18,13 @@ class DocumentManagerIntegration {
       {
         key: 'docManager1',
         displayName: 'Document manager 1',
-        onClick: (onFilesAdded: (files: SviAttachedFile[]) => void) =>
+        onClick: (onFilesAdded: (files: SviLinkedFile[]) => void) =>
           this.onSingleClick(onFilesAdded),
       },
       {
         key: 'docManager2',
         displayName: 'Document manager 2',
-        onClick: (onFilesAdded: (files: SviAttachedFile[]) => void) =>
+        onClick: (onFilesAdded: (files: SviLinkedFile[]) => void) =>
           this.onMultipleClick(onFilesAdded),
       }
     ];
@@ -40,14 +40,14 @@ class DocumentManagerIntegration {
    * content - Any content that has to be added for indexing and search purposes. This is an optional property.
    * size - The size of the attachment
    */
-  private onSingleClick(onFilesAdded: (files: SviAttachedFile[]) => void) {
+  private onSingleClick(onFilesAdded: (files: SviLinkedFile[]) => void) {
 
     /**
      * Launch UI for document manager selection here and have it return the correct JSON
      */
 
     // Mock JSON expected to be returned from document manager UI selection when one file is selected.
-    const file: SviAttachedFile[] = [{
+    const file: SviLinkedFile[] = [{
         fileName: "test_file_1.txt",
         link: "https://drive.google.com/file/d/1CrDON-qBaAWgHUhERRsdelYbKSNzymX8/view?usp=sharing",
         type: "text/plain",
@@ -59,14 +59,14 @@ class DocumentManagerIntegration {
   }
 
   // Example of multiple linked attachments returned
-  private onMultipleClick(onFilesAdded: (files: SviAttachedFile[]) => void) {
+  private onMultipleClick(onFilesAdded: (files: SviLinkedFile[]) => void) {
 
     /**
      * Launch UI for document manager selection here and have it return the correct JSON
      */
 
     // Mock JSON expected to be returned from document manager UI selection when multiple files are selected.
-    const files: SviAttachedFile[] = [
+    const files: SviLinkedFile[] = [
       {
         fileName: "test_file_1.txt",
         link: "https://drive.google.com/file/d/1CrDON-qBaAWgHUhERRsdelYbKSNzymX8/view?usp=sharing",
