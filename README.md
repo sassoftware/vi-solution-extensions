@@ -35,11 +35,6 @@ See our packages below:
 
 See the [Getting Started](documentation/guides) section of our guide.
 
-
-### Examples
-
-Coming soon.
-
 ## Contributing
 
 This project is not open for external contributions.
