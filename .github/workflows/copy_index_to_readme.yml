@@ -1,0 +1,21 @@
+name: Run Script on Merge to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-script:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up permissions for the script
+        run: chmod +x ./copy_index_to_readme.sh
+
+      - name: Run the script
+        run: ./copy_index_to_readme.sh
