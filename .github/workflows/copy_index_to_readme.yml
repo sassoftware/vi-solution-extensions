@@ -1,21 +1,39 @@
 name: Run Script on Merge to Main
 
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
       - main
 
 jobs:
   run-script:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up permissions for the script
         run: chmod +x ./copy_index_to_readme.sh
 
       - name: Run the script
         run: ./copy_index_to_readme.sh
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add README.md
+          git commit -m 'Update README.md from copy_index_to_readme.sh script' || echo "No changes to commit"
+          git push origin main || echo "Nothing to push"
