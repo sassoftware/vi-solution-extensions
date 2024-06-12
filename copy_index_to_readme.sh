@@ -16,3 +16,6 @@ sed 's|\./|docs/|g' docs/index.md > "$temp_file"
 mv "$temp_file" README.md
 
 echo "README.md created successfully."
+
+# Add the changes to branch
+git add README.md
