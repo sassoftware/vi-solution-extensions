@@ -6,25 +6,25 @@
 2. [Getting Started](./Getting-Started.md)
 3. [Adding Mobile Solution Extension Development To Existing Workspace](./Adding-Mobile-Solution-Extension-Development-To-Existing-Workspace.md)
 
-## Overview
+# Overview
 
 Solution extensions allow new controls with custom functionality to be deployed to an existing SAS Visual Investigator deployment. There are multiple tools available to ease the development and deployment of these solution extensions.
 
 See the documentation and examples provided here for help with these tools.
 
-### Prerequisites
+## Prerequisites
 
-#### Desktop Solution Extensions
+### Desktop Solution Extensions
 
 You must have access to a deployment of SAS Visual Investigator 10.8 (or later) to use the documented tools.
 
-#### Mobile Solution Extensions
+### Mobile Solution Extensions
 
 SAS Mobile Investigator does not support custom controls in 10.8 and will therefore must have access to a deployment of SAS Visual Investigator on Viya 4 to use the documented tools.
 
-### Installation
+## Installation
 
-#### NPM
+### NPM
 
 We have several packages published to npm that are referenced and used in these guides and documentation.
 
@@ -38,18 +38,18 @@ See our packages below:
 -   [`@sassoftware/vi-api`](https://www.npmjs.com/package/@sassoftware/vi-api)
 -   [`@sassoftware/mobile-investigator`](https://www.npmjs.com/package/@sassoftware/mobile-investigator)
 
-## Getting Started
+# Getting Started
 
 See the [Getting Started](./Getting-Started.md) section of our guide.
 
-## Contributing
+# Contributing
 
 This project is not open for external contributions.
 
-## License
+# License
 
 This project is licensed under this commercial [license](LICENSE.txt).
 
-## Additional Resources
+# Additional Resources
 
 -   SAS Visual Investigator API on [developer.sas.com](https://developer.sas.com/apis/vi/apiDocs/).

@@ -1,11 +1,3 @@
-# SAS Visual Investigator Solution Extensions
-
-# Table of Contents
-
-1. [Home](docs/index.md)
-2. [Getting Started](docs/Getting-Started.md)
-3. [Adding Mobile Solution Extension Development To Existing Workspace](docs/Adding-Mobile-Solution-Extension-Development-To-Existing-Workspace.md)
-
 # Overview
 
 Solution extensions allow new controls with custom functionality to be deployed to an existing SAS Visual Investigator deployment. There are multiple tools available to ease the development and deployment of these solution extensions.
@@ -40,7 +32,7 @@ See our packages below:
 
 # Getting Started
 
-See the [Getting Started](docs/Getting-Started.md) section of our guide.
+See the [Getting Started](./Getting-Started.md) section of our guide.
 
 # Contributing
 
