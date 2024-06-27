@@ -1,19 +1,43 @@
-# IDEs
-.idea/
-jsconfig.json
-.vscode/
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Misc
-node_modules/
-npm-debug.log*
-yarn-error.log*
+# compiled output
+**/dist
+**/tmp
+**/out-tsc
+# Only exists if Bazel was run
+**/bazel-out
 
-# Mac OSX Finder files.
-**/.DS_Store
+# dependencies
+**/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+
+# IDEs and editors
+**/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+**/.vscode
+**/.history/*
+
+# misc
+**/.env
+**/.angular/cache
+**/.sass-cache
+**/connect.lock
+**/coverage
+**/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+**/typings
+
+# System Files
 .DS_Store
-
-# Some common file extensions we should ignore
-/src/**/*~
-/src/**/*.swp
-/src/**/*.bak
-/src/**/*.log
+Thumbs.db
