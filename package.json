@@ -7,11 +7,11 @@
         "example": "examples"
     },
     "scripts": {
-        "generateReadme": "bash ./docs-pre-commit.sh"
+        "generateDocs": "./docs/generate.sh"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm run generateReadme"
+            "pre-commit": "npm run generateDocs"
         }
     },
     "devDependencies": {

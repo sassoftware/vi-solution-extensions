@@ -1,12 +1,15 @@
+<!-- Automatically generated table of contents -->
+
 # SAS Visual Investigator Solution Extensions
 
 # Table of Contents
 
-1. [Home](./index.md)
-2. [Getting Started](./Getting-Started.md)
-3. [Adding Mobile Solution Extension Development To Existing Workspace](./Adding-Mobile-Solution-Extension-Development-To-Existing-Workspace.md)
+1. [Home](../../README.md)
+2. [Getting Started](./1-getting-started.md)
+3. [Adding Mobile Solution Extensions](./2-mobile-solutions.md)
 
-# Adding Mobile Solution Extension Development To Existing Workspace
+<!-- toc_end -->
+# Adding Mobile Solution Extensions
 
 ## Using Add-Mobile Script
 
@@ -26,8 +29,8 @@ It is possible that a workspace was scaffolded out with an older version of the[
 
 If this is the case then the first thing required is to make sure your dependencies are up to date. You should install the latest versions of:
 
--   [`@sassoftware/vi-solution-extension-angular-schematics`](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-angular-schematics)
--   [`@sassoftware/vi-solution-extension-upload`](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload)
+- [`@sassoftware/vi-solution-extension-angular-schematics`](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-angular-schematics)
+- [`@sassoftware/vi-solution-extension-upload`](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload)
 
 Then at the root of your workspace run:
 
