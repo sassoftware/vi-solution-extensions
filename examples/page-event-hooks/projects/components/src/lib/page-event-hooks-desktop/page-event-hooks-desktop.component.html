@@ -1,0 +1,28 @@
+<label
+  class="sas-form-label"
+  [for]="childNode.attrs.id"
+  [ngClass]="{ required: controlApi.control.state.required }"
+  >{{ labelText }}</label
+>
+
+<ng-container *ngIf="inView; then viewBlock; else nonViewBlock"></ng-container>
+
+<ng-template #viewBlock>
+  {{ fieldValue === undefined || fieldValue === null ? "" : fieldValue }}
+</ng-template>
+
+<ng-template #nonViewBlock>
+  <input
+    type="text"
+    class="sas-input sas-form-element {{
+      childNode.typeAttributes['inputWidthCSSClass']
+    }}"
+    [id]="childNode.attrs.id"
+    [(ngModel)]="fieldValue"
+    [disabled]="inDesignMode"
+    [readOnly]="
+      controlApi.control.state.readOnly ||
+      (inDesignMode && !controlApi.control.state.allowInput)
+    "
+  />
+</ng-template>

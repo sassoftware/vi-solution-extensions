@@ -1,0 +1,10 @@
+label {
+  display: flex;
+  gap: var(--block-x-small);
+  white-space: inherit;
+}
+
+.mobile-field-value {
+  font-size: var(--text-size-x-large);
+  word-break: break-word;
+}

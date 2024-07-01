@@ -1,0 +1,48 @@
+{
+  "name": "page-event-hooks",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "env-cmd ng build --configuration production --project elements --output-hashing none --single-bundle",
+    "watch": "env-cmd ng build --configuration production --project elements --output-hashing none --single-bundle --watch --plugin @sassoftware/vi-solution-extension-upload/src/upload-bundle.ngx-plugin",
+    "create:solution-control": "env-cmd ng g @sassoftware/vi-solution-extension-angular-schematics:wc --project components",
+    "add-mobile": "ng g @sassoftware/vi-solution-extension-angular-schematics:add-mobile",
+    "build:mobile": "env-cmd ng build --configuration production --project mobile-elements --output-hashing none --single-bundle",
+    "watch:mobile": "env-cmd ng build --configuration production --project mobile-elements --output-hashing none --single-bundle --watch --plugin @sassoftware/vi-solution-extension-upload/src/upload-bundle.ngx-plugin",
+    "create:solution-control-mobile": "env-cmd ng g @sassoftware/vi-solution-extension-angular-schematics:mwc --project components"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^17.3.0",
+    "@angular/common": "^17.3.0",
+    "@angular/compiler": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@angular/elements": "^17.3.11",
+    "@angular/forms": "^17.3.0",
+    "@angular/platform-browser": "^17.3.0",
+    "@angular/platform-browser-dynamic": "^17.3.0",
+    "@angular/router": "^17.3.0",
+    "@sassoftware/mobile-investigator": "^4.2.0",
+    "@sassoftware/vi-api": "latest",
+    "ngx-build-plus": "^17.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.8",
+    "@angular/cli": "^17",
+    "@angular/compiler-cli": "^17.3.0",
+    "@sassoftware/vi-solution-extension-angular-schematics": "^1.1.0",
+    "@sassoftware/vi-solution-extension-upload": "^0.3.2",
+    "@types/jasmine": "~5.1.0",
+    "env-cmd": "^10.1.0",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^17.3.0",
+    "typescript": "~5.4.2"
+  }
+}

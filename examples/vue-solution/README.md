@@ -21,7 +21,7 @@ npm run watch
 npm run build
 ```
 
-> **NOTE**: Both `watch` and `build` scripts perform vite builds which, upon success, will generate a javascript bundle at `./dist/elements/main.js` which is then automatically uploaded to the server using the publicly availalbe npm package [@sassoftware/vi-solution-extension-upload](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload).
+> **NOTE**: Both `watch` and `build` scripts perform vite builds which, upon success, will generate a javascript bundle at `./dist/elements/main.js` which is then automatically uploaded to the server using the publicly available npm package [@sassoftware/vi-solution-extension-upload](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload).
 
 To create a new project using the `vue-ts` scaffold run:
 
@@ -32,13 +32,14 @@ npm create vite@latest my-vue-app -- --template vue-ts
 > **NOTE**: You will need to manually modify this blank project to upload a single JavaScript bundle to a deploy of SVI.
 
 ## Points of interest
-- [./vite.config.ts](./vite.config.ts) - The config for the Vite JavaScript Compiler. Here, Vite has been configured to automatically upload a single javascript bundle after each successful build. Using scss preprocessorOptions, Vite also automatically imports a shared stylesheet externally hosted on the server running SAS Visual Investigator.
-- [./src/main.ts](./src/main.ts) - The entry-point for the solution extension. Here, we define the example text-input controlas a custom element and registered it as a Solution Extension using the vi-api.
-- [./src/elements/text-input/index.ts](./src/elements/text-input) - The Solution Extension Control Metadata used to register the control with SAS Visual Investigator. Here, we can define a number of configurable TypeAttributes our control will use, as well as label resource strings, and other necessary properties required when registering a Solution Extension.
-- [./src/elements/text-input/index.ts](./src/elements/text-input) - A basic text-input example component written in Vue using the [Vue Compositon API](https://vuejs.org/guide/extras/composition-api-faq.html). Once mounted, this component registers a number of event hooks via the vi-api, including page and control state onChange hooks. The component HTML template utilises classes available in the sas-shared-styles stylesheet.
+
+-   [./vite.config.ts](./vite.config.ts) - The config for the Vite JavaScript Compiler. Here, Vite has been configured to automatically upload a single javascript bundle after each successful build. Using scss preprocessorOptions, Vite also automatically imports a shared stylesheet externally hosted on the server running SAS Visual Investigator.
+-   [./src/main.ts](./src/main.ts) - The entry-point for the solution extension. Here, we define the example text-input controls a custom element and registered it as a Solution Extension using the vi-api.
+-   [./src/elements/text-input/index.ts](./src/elements/text-input) - The Solution Extension Control Metadata used to register the control with SAS Visual Investigator. Here, we can define a number of configurable TypeAttributes our control will use, as well as label resource strings, and other necessary properties required when registering a Solution Extension.
+-   [./src/elements/text-input/index.ts](./src/elements/text-input) - A basic text-input example component written in Vue using the [Vue Composition API](https://vuejs.org/guide/extras/composition-api-faq.html). Once mounted, this component registers a number of event hooks via the vi-api, including page and control state onChange hooks. The component HTML template utilises classes available in the sas-shared-styles stylesheet.
 
 ### Recommended Setup
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
-- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - Vue tooling for VS Code
 
+-   [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+-   Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+-   [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - Vue tooling for VS Code

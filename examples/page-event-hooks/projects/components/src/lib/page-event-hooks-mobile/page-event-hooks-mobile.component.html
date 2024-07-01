@@ -1,0 +1,26 @@
+<label
+  [for]="childNode.attrs.id"
+  [ngClass]="{ required: controlApi.control.state.required }"
+>
+  {{ labelText }}
+</label>
+
+<ng-container *ngIf="inView; then viewBlock; else nonViewBlock"></ng-container>
+
+<ng-template #viewBlock>
+  <div class="mobile-field-value">
+    {{ fieldValue === undefined || fieldValue === null ? "-" : fieldValue }}
+  </div>
+</ng-template>
+
+<ng-template #nonViewBlock>
+  <input
+    type="text"
+    [id]="childNode.attrs.id"
+    [(ngModel)]="fieldValue"
+    [disabled]="inDesignMode"
+    [readOnly]="
+      controlApi.control.state.readOnly || !controlApi.control.state.allowInput
+    "
+  />
+</ng-template>
