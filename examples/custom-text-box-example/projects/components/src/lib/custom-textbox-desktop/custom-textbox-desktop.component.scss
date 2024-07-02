@@ -1,0 +1,20 @@
+.text-area-container.text-area-full-height {
+    padding-block-end: 1rem;
+}
+
+textarea {
+    resize: none;
+
+    &.designer-readonly {
+        opacity: var(--input-disabled-opacity) !important;
+        border: 1px dashed var(--input-disabled-bd) !important;
+        padding: 2px 0.5rem !important;
+    }
+
+    &.disabled-input {
+        color: var(--input-disabled-fg);
+        opacity: var(--input-disabled-opacity);
+        padding: 2px 0.5rem;
+        border: 1px solid var(--input-disabled-bd);
+    }
+}

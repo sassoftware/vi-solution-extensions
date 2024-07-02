@@ -1,0 +1,25 @@
+<smi-control-label></smi-control-label>
+<ng-container *ngIf="inView; then viewBlock; else nonViewBlock"></ng-container>
+
+<ng-template #viewBlock>
+    <div class="view-mode-field-value">
+        {{ fieldValue || "-" }}
+    </div>
+</ng-template>
+
+<ng-template #nonViewBlock>
+    <textarea
+        #textarea
+        class="control-input"
+        (input)="onInput($event.target)"
+        [value]="fieldValue"
+        [attr.rows]="rows"
+        [attr.aria-multiline]="isMultiLine"
+        (paste)="handlePaste($event)"
+        (keydown.enter)="handleEnter($event)"
+        [id]="uuid"
+        [required]="state.required"
+        [readOnly]="state.readOnly"
+        [disabled]="state.disabled"
+    ></textarea>
+</ng-template>

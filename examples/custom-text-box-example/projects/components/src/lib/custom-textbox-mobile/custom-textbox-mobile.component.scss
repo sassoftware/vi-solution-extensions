@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+:host(.admin) {
+  pointer-events: none;
+}
+
+:host(.show-invalid) .control-input {
+  border-color: var(--alert-normal-bd);
+}
+
+textarea[rows="1"] {
+  resize: none;
+}
+
+.view-mode-field-value {
+  font-size: var(--text-size-x-large);
+}

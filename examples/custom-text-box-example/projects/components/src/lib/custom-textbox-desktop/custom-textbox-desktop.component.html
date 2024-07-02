@@ -1,0 +1,65 @@
+<label class="sas-form-label" [for]="childNode.id" [ngClass]="{ required: state.required, disabled: state.disabled }">{{
+    childNode.typeAttributes.title?.text
+}}</label>
+
+<ng-container *ngIf="inView; then viewBlock; else nonViewBlock"></ng-container>
+
+<ng-template #viewBlock>
+    <span *ngIf="!isMultiLine">{{ fieldValue }}</span>
+
+    <div
+        *ngIf="isMultiLine"
+        class="text-area-container"
+        [ngClass]="{
+            'designer-readonly': pageModel.mode === PageMode.Design && !!state.readOnly,
+            'text-area-full-height': isFillAvailableSpace
+        }"
+        [style.height]="height"
+    >
+        <textarea
+            #textarea
+            class="sas-form-element {{ childNode.typeAttributes['inputWidthCSSClass'] }}"
+            [ngClass]="{
+                'designer-readonly': pageModel.mode === PageMode.Design && !!state.readOnly,
+                'disabled-input': state.disabled
+            }"
+            [value]="fieldValue"
+            [attr.rows]="rows"
+            [attr.aria-multiline]="isMultiLine"
+            [required]="state.required"
+            [readOnly]="true"
+            [disabled]="state.disabled || inDesignMode"
+            [style.height]="height"
+        ></textarea>
+    </div>
+</ng-template>
+
+<ng-template #nonViewBlock>
+    <div
+        class="text-area-container"
+        [ngClass]="{
+            'designer-readonly': pageModel.mode === PageMode.Design && !!state.readOnly,
+            'text-area-full-height': isFillAvailableSpace
+        }"
+        [style.height]="height"
+    >
+        <textarea
+            #textarea
+            class="sas-form-element {{ childNode.typeAttributes['inputWidthCSSClass'] }}"
+            [ngClass]="{
+                'designer-readonly': pageModel.mode === PageMode.Design && !!state.readOnly,
+                'disabled-input': state.disabled
+            }"
+            (input)="onInput($event.target)"
+            [value]="fieldValue"
+            [attr.rows]="rows"
+            [attr.aria-multiline]="isMultiLine"
+            (paste)="handlePaste($event)"
+            (keydown.enter)="handleEnter($event)"
+            [required]="state.required"
+            [readOnly]="state.readOnly"
+            [disabled]="state.disabled || inDesignMode"
+            [style.height]="height"
+        ></textarea>
+    </div>
+</ng-template>
