@@ -7,6 +7,7 @@
 1. [Home](../../README.md)
 2. [Getting Started](./1-getting-started.md)
 3. [Adding Mobile Solution Extensions](./2-mobile-solutions.md)
+4. [Manually Uploading Bundles](./3-manual-uploading.md)
 
 <!-- toc_end -->
 # Getting Started

@@ -25,17 +25,19 @@ function update_document() {
   file=$1
   temp_file=$(mktemp)
 
-  if grep -q "<!-- toc_end -->" "$file"; then
-    echo -e "$TABLE_OF_CONTENTS\n$(cat $file | sed -e '1,/toc_end/d')" > "$temp_file"
+  if [ $file = "README.md" ]; then
+    (echo -e "$TABLE_OF_CONTENTS" | sed 's|\.\./||g' | sed 's|\./|\./docs/pages/|g') > $temp_file
   else
-    echo -e "$TABLE_OF_CONTENTS\n$(cat $file)" > "$temp_file"
+    echo -e "$TABLE_OF_CONTENTS" > $temp_file
   fi
 
-  if [ $file = "README.md" ]; then
-    echo -e "$(cat $temp_file | sed 's|\.\./||g' | sed 's|\./|\./docs/pages/|g')" > $file
+  if grep -q "<!-- toc_end -->" "$file"; then
+    echo -e "$(cat $file | sed -e '1,/toc_end/d')" >> $temp_file
   else
-    mv "$temp_file" "$file"
+    echo -e "$(cat $file)" >> $temp_file
   fi
+
+  mv $temp_file $file
 
   echo "- Updated ./$file"
 }
