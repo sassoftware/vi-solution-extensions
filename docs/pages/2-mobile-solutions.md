@@ -22,7 +22,7 @@ npm run add-mobile
 
 This will then scaffold out the workspace as if "y" had been selected at initialisation.
 
-You can then create your mobile components, a guide for which can be found [here](./1-getting-started#mobile-solution-extensions).
+You can then create your mobile components, a guide for which can be found [here](./1-getting-started.md#mobile-solution-extensions).
 
 ## No Add-Mobile Script
 
