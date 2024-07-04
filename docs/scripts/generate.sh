@@ -42,14 +42,14 @@ function update_document() {
   echo "- Updated ./$file"
 }
 
-if [ ! -f ./docs/template.md ]; then
-  echo "docs/template.md not found!"
+if [ ! -f ./docs/scripts/template.md ]; then
+  echo "docs/scripts/template.md not found!"
   exit 1
 fi
 
 echo -e "\nGenerating table of contents for docs directory:" && generate_toc
 
-TABLE_OF_CONTENTS=$(cat docs/template.md | sed -e "s%{{ toc }}%$TABLE%")
+TABLE_OF_CONTENTS=$(cat docs/scripts/template.md | sed -e "s%{{ toc }}%$TABLE%")
 
 # Update the table of contents for each page in docs/pages
 for file in $(find docs/pages -name '*.md' | sort -Vt - -k1,1); do

@@ -22,7 +22,7 @@ npm run add-mobile
 
 This will then scaffold out the workspace as if "y" had been selected at initialisation.
 
-You can then create your mobile components, a guide for which can be found [here](./Getting-Started#mobile-solution-extensions).
+You can then create your mobile components, a guide for which can be found [here](./1-getting-started#mobile-solution-extensions).
 
 ## No Add-Mobile Script
 
@@ -30,8 +30,8 @@ It is possible that a workspace was scaffolded out with an older version of the[
 
 If this is the case then the first thing required is to make sure your dependencies are up to date. You should install the latest versions of:
 
-- [`@sassoftware/vi-solution-extension-angular-schematics`](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-angular-schematics)
-- [`@sassoftware/vi-solution-extension-upload`](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload)
+-   [`@sassoftware/vi-solution-extension-angular-schematics`](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-angular-schematics)
+-   [`@sassoftware/vi-solution-extension-upload`](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload)
 
 Then at the root of your workspace run:
 
