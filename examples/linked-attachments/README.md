@@ -1,8 +1,8 @@
 # Attach as link solution
 
-This is an example solution showcasing how to add attachments to Visual Investigators attachments manager via an external document manager as a link.
+This is an example solution showcasing the addition of attachments as links to SAS Visual Investigator's attachments manager via an external document manager.
 
-This example contains mocked functions returning data that is required by Visual Investigator to be able to attach as link. Real life solutions will need to configure the data returned from the intended document managers API to match the return types.
+This example contains mocked functions returning data that is required by SAS Visual Investigator to be able to attach a link. Real life solutions must configure the data returned from the intended document manager's API to match the return types.
 
 ### Prerequisites
 
@@ -11,9 +11,9 @@ You must have access to a deployment of SAS Visual Investigator Viya 4 to use th
 
 ### Example Files
 
-* [document-manager-integration.ts](projects/components/src/lib/document-manager-integration.ts) - Contains 3 example methods detailing the objects required by VI to register and apply the document managers to the attachment managers dropdown list and the handling of linked attachments after they have been selected.
+* [document-manager-integration.ts](projects/components/src/lib/document-manager-integration.ts) - Contains three example methods detailing the objects required by SAS Visual Investigator to register and apply the document managers to the attachment manager's drop-down list, as well as the handling of linked attachments after they have been selected.
 
-* [app.module.ts](projects/components/src/app.module.ts) - Details how the solution can register external document managers with VI. It uses the VI API to register any document managers configured in document-manager-integration.ts.
+* [app.module.ts](projects/components/src/app.module.ts) - Details how the solution can register external document managers with SAS Visual Investigator. It uses the SAS Visual Investigator API to register any document managers configured in [document-manager-integration.ts](projects/components/src/lib/document-manager-integration.ts).
 
 
 ## How to  use
@@ -34,4 +34,4 @@ Run `npm run watch` to build the project and upload it to the server.
 
 ### Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For more information about the Angular CLI use `ng help`, or see [Angular CLI Overview and Command Reference](https://angular.io/cli).

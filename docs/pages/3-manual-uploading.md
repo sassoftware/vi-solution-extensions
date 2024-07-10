@@ -15,7 +15,7 @@
 The [@sassoftware/vi-solution-extension-upload](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload) package enables developers to upload a bundled collection of solution extensions to a deployed instance of SAS Visual Investigator.
 
 ## Prerequisites
-- A deployed instance of SAS Visual Investigator 10.8 or later (Viya 4 for Mobile development).
+- A deployed instance of SAS Visual Investigator 10.8 or later (SAS Viya 4 for Mobile development).
 - A JavaScript bundle containing solution extensions to upload.
 
 ## Use cases
@@ -23,10 +23,10 @@ The [@sassoftware/vi-solution-extension-upload](https://www.npmjs.com/package/@s
 - Manually creating and registering solution extensions as [Custom Elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) within the DOM.
 
 #### Vue Example
-For a detailed example of how to create and upload a solution extension written in [VueJS](https://vuejs.org/), please refer to the [Vue Example](../../examples/vue-solution/) in the [examples](../../examples) directory.
+For a detailed example of how to create and upload a solution extension written in [VueJS](https://vuejs.org/), refer to the [Vue Example](../../examples/vue-solution/) in the [examples](../../examples) directory.
 
 ## Setup
-The upload tool requires specific environment variables to be set in order to upload solutions to a remote server. In order to specify the login credentials, server address and bundle path, you must create and populate an `.env` file with the below environment variables:
+The upload tool requires specific environment variables to be set in order to upload solutions to a remote server. In order to specify the login credentials, server address, and bundle path, you must create and populate an `.env` file with the following environment variables:
 
 ```env
 SVI_HOSTNAME=http://example-host.na.sas.com
@@ -35,10 +35,10 @@ SVI_PASSWORD=password
 SVI_BUNDLE_PATH=./dist/elements/main.js
 SMI_BUNDLE_PATH=./dist/mobile-elements/main.js
 ```
-> **NOTE**: The variables `SVI_BUNDLE_PATH` and/or `SMI_BUNDLE_PATH` must point to the relative path of a valid JavaScript bundle.
+> **NOTE**: The variables `SVI_BUNDLE_PATH` and `SMI_BUNDLE_PATH`, if it is included, must point to the relative path of a valid JavaScript bundle.
 
 ## Uploading to SAS Visual Investigator
-Following the above setup guide, you can now upload solution extensions to your own deployed instance of SAS visual Investigator
+You can now upload solution extensions to your own deployed instance of SAS Visual Investigator.
 
 ### via Package Script
 1. Install the [@sassoftware/vi-solution-extension-upload](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload) and [env-cmd](https://www.npmjs.com/package/env-cmd) package(s) as dev dependencies:
@@ -56,10 +56,10 @@ Following the above setup guide, you can now upload solution extensions to your 
     ```bash
     npm run upload
     ```
-If unsuccessful, please check that the bundle path, login credentials and server address you have provided are correct.
+If unsuccessful, check that the bundle path, login credentials, and server address that you have provided are correct.
 
 ### via the CLI
-Similarly to above, you can run the solution extension upload script directly from the CLI by adding the environment variables in `.env` to your environment and running the upload script directly via `node`:
+You can also run the solution extension upload script directly from the CLI by adding the environment variables in `.env` to your environment and running the upload script directly via `node`:
 ```bash
 # Export .env to local environment
 export $(grep -v '^#' .env | xargs)
@@ -72,4 +72,4 @@ node -e "require('@sassoftware/vi-solution-extension-upload/src/uploader').uploa
 ```
 
 ## Additional resources
-- Further information about the vi-solution-extension-upload package can be found at https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload
+- Further more information about the vi-solution-extension-upload package, see https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload.

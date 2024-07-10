@@ -1,6 +1,6 @@
 # Custom Textbox Solution
 
-This is an example solution showcasing how to create a textbox, making use of data binding, conditional classes and attributes as well as using the control API with a desktop and mobile example.
+This is an example solution showcasing the creation of a textbox, using data binding, conditional classes and attributes, as well as using the control API for both desktop and mobile.
 
 ### Prerequisites
 
@@ -22,4 +22,4 @@ Run `npm run watch` for desktop and `npm run watch:mobile` for mobile to watch f
 
 ### Build
 
-Run `npm run watch` for desktop and `npm run watch:mobile` for mobile to build the project and upload it to the server.
+Run `npm run build` for desktop and `npm run build:mobile` for mobile to build the project and upload it to the server.

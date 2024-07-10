@@ -12,7 +12,7 @@
 <!-- toc_end -->
 # Overview
 
-Solution extensions allow new controls with custom functionality to be deployed to an existing SAS Visual Investigator deployment. There are multiple tools available to ease the development and deployment of these solution extensions.
+Solution extensions enable you to deploy new controls with custom functionality to an existing SAS Visual Investigator deployment. There are multiple tools available to ease the development and deployment of these solution extensions.
 
 See the documentation and examples provided here for help with these tools.
 
@@ -20,19 +20,19 @@ See the documentation and examples provided here for help with these tools.
 
 ### Desktop Solution Extensions
 
-You must have access to a deployment of SAS Visual Investigator 10.8 (or later) to use the documented tools.
+You must have access to a deployment of SAS Visual Investigator 10.8 or later to use the documented tools.
 
 ### Mobile Solution Extensions
 
-SAS Mobile Investigator does not support custom controls in 10.8 and will therefore must have access to a deployment of SAS Visual Investigator on Viya 4 to use the documented tools.
+SAS Mobile Investigator does not support custom controls in 10.8. You must have access to a deployment of SAS Visual Investigator on Viya 4 to use the documented tools.
 
 ## Installation
 
 ### NPM
 
-We have several packages published to npm that are referenced and used in these guides and documentation.
+SAS has published several packages published to npm that are referenced and used in this guide.
 
-You should use the `@sassoftware/vi-solution-extension-create` package to create a workspace that downloads and installs these for you. For more information, see the [Getting Started](./docs/pages/1-getting-started.md) section of our guide.
+Use the `@sassoftware/vi-solution-extension-create` package to create a workspace that downloads and installs the required packages. For more information, see the [Getting Started](./docs/pages/1-getting-started.md).
 
 See our packages below:
 
@@ -44,7 +44,7 @@ See our packages below:
 
 # Getting Started
 
-See the [Getting Started](./docs/pages/1-getting-started.md) section of our guide.
+For more information, see [Getting Started](./docs/pages/1-getting-started.md).
 
 # Contributing
 
