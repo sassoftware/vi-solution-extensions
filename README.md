@@ -30,9 +30,9 @@ SAS Mobile Investigator does not support custom controls in 10.8. You must have 
 
 ### NPM
 
-SAS has published several packages published to npm that are referenced and used in this guide.
+SAS has published several packages to npm that are referenced and used in this guide.
 
-Use the `@sassoftware/vi-solution-extension-create` package to create a workspace that downloads and installs the required packages. For more information, see the [Getting Started](./docs/pages/1-getting-started.md).
+Use the `@sassoftware/vi-solution-extension-create` package to create a workspace that downloads and installs the required packages. For more information, see [Getting Started](./docs/pages/1-getting-started.md).
 
 See our packages below:
 

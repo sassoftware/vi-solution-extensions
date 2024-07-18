@@ -72,4 +72,4 @@ node -e "require('@sassoftware/vi-solution-extension-upload/src/uploader').uploa
 ```
 
 ## Additional resources
-- Further more information about the vi-solution-extension-upload package, see https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload.
+For more information about the vi-solution-extension-upload package, see https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload.

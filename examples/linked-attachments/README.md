@@ -6,7 +6,7 @@ This example contains mocked functions returning data that is required by SAS Vi
 
 ### Prerequisites
 
-You must have access to a deployment of SAS Visual Investigator Viya 4 to use the documented tools.
+You must have access to a deployment of SAS Visual Investigator on SAS Viya 4 to use the documented tools.
 
 
 ### Example Files
@@ -17,7 +17,7 @@ You must have access to a deployment of SAS Visual Investigator Viya 4 to use th
 
 
 ## How to  use
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 17.
 
 # Setup
 Rename `.env.example` to `.env` and populate it with your server address and login credentials. 

@@ -37,7 +37,7 @@ This creates your new workspace and installs the required dependencies.
 
 ### Desktop Solution Extensions
 
-SAS provides schematics for multiple types of solution extensions:
+SAS provides schematics for multiple types of solution extension:
 
 - **Page** - A control that can be added to object pages.
 - **Home** - A control that can be added to Home pages.
@@ -53,7 +53,7 @@ npm run create:solution-control
 
 You are prompted to name your solution extension in PascalCase and select the type.
 
-For example: naming the control "MyNewControl" will be create a new component in the components directory named "my-new-control".
+For example, naming the control "MyNewControl" creates a new component in the components directory named "my-new-control".
 
 This script does the following:
 
@@ -71,7 +71,7 @@ The script creates the following files:
 
 ### Mobile Solution Extensions
 
-SAS provides schematics for multiple types of mobile solution extensions:
+SAS provides schematics for multiple types of mobile solution extension:
 
 - **MobileObjectControls** - A control that can be added to mobile object pages.
 - **MobileHomepageControls** - A control that can be added to mobile Home pages.
@@ -82,7 +82,7 @@ After creating an Angular workspace using the `@sassoftware/vi-solution-extensio
 npm run create:solution-control-mobile
 ```
 
-You are prompted to name your solution extension and select the type.
+You are prompted to name your solution extension in PascalCase and select the type.
 
 This script does the same as the [desktop command](#desktop-solution-extensions), but it imports the newly created module into `components > src > mobile-app.module.ts`.
 

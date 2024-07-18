@@ -4,11 +4,11 @@ This is an example solution showcasing the creation of a textbox, using data bin
 
 ### Prerequisites
 
-You must have access to a deployment of SAS Visual Investigator Viya 4 to use the documented tools.
+You must have access to a deployment of SAS Visual Investigator on SAS Viya 4 to use the documented tools.
 
 ## How to use
 
-This project was generated with [@sassoftware/vi-solution-extension-create](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-create) and [@sassoftware/vi-solution-extension-angular-schematics](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-angular-schematics).
+This project was generated using [@sassoftware/vi-solution-extension-create](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-create) and [@sassoftware/vi-solution-extension-angular-schematics](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-angular-schematics).
 
 # Setup
 
@@ -22,4 +22,4 @@ Run `npm run watch` for desktop and `npm run watch:mobile` for mobile to watch f
 
 ### Build
 
-Run `npm run build` for desktop and `npm run build:mobile` for mobile to build the project and upload it to the server.
+Run `npm run build` for desktop and `npm run build:mobile` for mobile to build the project.
