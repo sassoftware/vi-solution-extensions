@@ -1,0 +1,29 @@
+<!-- qr-code.html -->
+
+<style>
+  /* The styles are included here for demo purposes only. */
+  /* Use unique class names to avoid conflicts. */
+  .qr-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+</style>
+
+<!-- You would typically have a different template for non-design modes
+     in which you can one-time bind the values which do not change. -->
+<div class="qr-code-container">
+  <h2 ng-if="$ctrl.childNode.typeAttributes.title.text">
+    {{$ctrl.childNode.typeAttributes.title.text}}
+  </h2>
+
+  <!-- https://docs.telerik.com/kendo-ui/AngularJS/introduction -->
+  <div ng-show="$ctrl.value.length > 0 || $ctrl.inDesignMode()"
+       class="qr-code"
+       kendo-qrcode="widget"
+       k-options="$ctrl.options"
+       k-value="$ctrl.value"
+       k-rebind="$ctrl.value">
+  </div>
+</div>

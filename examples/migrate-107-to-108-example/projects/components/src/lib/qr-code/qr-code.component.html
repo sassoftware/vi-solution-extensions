@@ -1,0 +1,16 @@
+<div class="qr-code-container">
+  <h2 *ngIf="childNode.typeAttributes.title?.text">
+    {{childNode.typeAttributes.title?.text}}
+  </h2>
+
+  <ng-container *ngIf="(value.length > 0 || inDesignMode)">
+    <kendo-qrcode
+      class="qr-code"
+      [border]="options.border"
+      [background]="options.background"
+      [color]="options.color"
+      [value]="value"
+    >
+    </kendo-qrcode>
+  </ng-container>
+</div>

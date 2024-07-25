@@ -1,0 +1,48 @@
+control_id - <unique control ID>
+
+control_nm - qr
+
+control_category_id - 4
+
+directive_nm - qr-code
+
+display_nm - QR Code
+
+control_description_txt - A control to view QR codes
+
+properties_title_txt - QR Code Attributes
+
+control_attribute_json_doc  -
+{
+  "metadata": {
+    "iconClass": "appChooserIcon"
+  },
+  "attributes": {
+    "title.text": {
+      "displayName": {
+        "defaultText": "Title:",
+        "resourceKey": "qr.prop.title.label"
+      },
+      "defaultValue": "QR Code",
+      "order": 0,
+      "type": "TextInput"
+    },
+    "dataSource": {
+      "displayName": {
+        "defaultText": "Data Source:",
+        "resourceKey": "qr.prop.dataSource.label"
+      },
+      "order": 1,
+      "type": "DataSource",
+      "required": true
+    }
+  }
+}
+
+template_html_doc - The contents of QRCode-component.html.
+
+directive_txt - The contents of QRCode-component.js.
+
+version_no - 0
+
+custom_control_flg - 1
