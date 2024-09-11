@@ -1,24 +1,40 @@
 <label
   [for]="childNode.attrs.id"
-  [ngClass]="{ required: controlApi.control.state.required }"
+  [ngClass]="{
+    required: controlApi.control.state.required,
+    'sas-form-label': !inMobile
+  }"
 >
   {{ labelText }}
 </label>
 
 <ng-container *ngIf="inView; then viewBlock; else nonViewBlock"></ng-container>
 
+<!-- Add a viewBlock template to handle inView condition -->
 <ng-template #viewBlock>
+  <ng-container
+    *ngIf="inMobile; then viewBlockMobile; else viewBlockDesktop"
+  ></ng-container>
+</ng-template>
+
+<ng-template #viewBlockMobile>
   <div class="mobile-field-value">
     {{ fieldValue === undefined || fieldValue === null ? "-" : fieldValue }}
   </div>
 </ng-template>
 
+<ng-template #viewBlockDesktop>
+  {{ fieldValue === undefined || fieldValue === null ? "" : fieldValue }}
+</ng-template>
+
 <ng-template #nonViewBlock>
   <input
     type="text"
+    [class]="inputClasses"
     [id]="childNode.attrs.id"
     [(ngModel)]="fieldValue"
     [disabled]="inDesignMode"
+    [style.pointerEvents]="inDesignMode ? 'none' : ''"
     [readOnly]="
       controlApi.control.state.readOnly || !controlApi.control.state.allowInput
     "

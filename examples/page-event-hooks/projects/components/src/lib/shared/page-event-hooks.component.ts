@@ -12,25 +12,31 @@ import {
 import { ControlMemberApi as DesktopApi } from '@sassoftware/vi-api/control/control-api';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HookablePageEvents, PageMode } from '@sassoftware/vi-api/page-model';
+import {
+  HookablePageEvents,
+  IPageEvent,
+  IPageEventData,
+  PageEventHookRemove,
+  PageMode,
+} from '@sassoftware/vi-api/page-model';
 import {
   EventHookRemove,
   HookableEvent,
   SaveEventPayload,
 } from '@sassoftware/mobile-investigator/src/app/mobile/page/events/events.model';
-import { pageEventHooksAttributes } from '../shared/page-event-hooks.model';
+import { pageEventHooksAttributes } from './page-event-hooks.model';
 
 @Component({
-  selector: 'mobile-sol-page-event-hooks-mobile',
+  selector: 'sol-page-event-hooks',
   standalone: true,
-  templateUrl: './page-event-hooks-mobile.component.html',
-  styleUrl: '../shared/page-event-hooks.component.scss',
+  templateUrl: './page-event-hooks.component.html',
+  styleUrl: './page-event-hooks.component.scss',
   imports: [CommonModule, FormsModule],
 })
-export class PageEventHooksMobileComponent implements OnInit, OnDestroy {
+export class PageEventHooksComponent implements OnInit, OnDestroy {
   @Input() controlApi!:
     | SmiControlApi<pageEventHooksAttributes, 'STRING'>
-    | DesktopApi<pageEventHooksAttributes, never>;
+    | DesktopApi<pageEventHooksAttributes, 'STRING'>;
 
   public get labelText(): string {
     return (
@@ -53,6 +59,12 @@ export class PageEventHooksMobileComponent implements OnInit, OnDestroy {
   public set fieldValue(newVal: string | undefined) {
     if (isMobileControlApi(this.controlApi)) {
       this.controlApi.control.setFieldValue(newVal);
+    } else {
+      if (!this.fieldName) {
+        throw new Error('Cannot set fieldValue for unknown fieldName');
+      } else {
+        this.controlApi.control.setFieldValue(newVal!);
+      }
     }
   }
 
@@ -68,6 +80,22 @@ export class PageEventHooksMobileComponent implements OnInit, OnDestroy {
     }
   }
 
+  public get inMobile() {
+    return isMobileControlApi(this.controlApi);
+  }
+
+  public get inputClasses() {
+    if (!this.inMobile) {
+      return `sas-input sas-form-element ${
+        this.childNode.typeAttributes['inputWidthCSSClass'] ?? ''
+      }`;
+    }
+
+    return '';
+  }
+
+  public PageMode = PageMode;
+
   /**
    * The order of execution for save event hooks.
    * All pre/post event hooks are executed in ascending 'order'.
@@ -77,12 +105,14 @@ export class PageEventHooksMobileComponent implements OnInit, OnDestroy {
     validation: 1,
   };
 
-  private removeHookCallbacks: EventHookRemove[] = [];
+  private removeHookCallbacks: PageEventHookRemove[] | EventHookRemove[] = [];
 
   constructor(private cd: ChangeDetectorRef) {}
 
   public ngOnInit(): void {
-    // Init event hooks if control isn't in design mode
+    // Init event hooks if control is in mobile, the if/else isMobileControlApi allows for type
+    // narrowing on the control API which is useful for page event hooks as the typings are slightly
+    // different between desktop and mobile.
     if (isMobileControlApi(this.controlApi)) {
       // the control API page event hooks are scoped to the page on which the control resides.
       const objectSaveEvent = this.controlApi.page.events.getPageEvent(
@@ -98,7 +128,22 @@ export class PageEventHooksMobileComponent implements OnInit, OnDestroy {
       // Ensure page control events trigger change detection
       this.controlApi.page.onModeChange(() => this.cd.detectChanges());
     } else {
+      // Init event hooks if control isn't in design mode
+      if (this.controlApi.page.getMode() !== PageMode.Design) {
+        // the control API page event hooks are scoped to the page on which the control resides.
+        const objectSaveEvent = this.controlApi.page.events.getPageEvent(
+          HookablePageEvents.SaveObject
+        );
+
+        if (objectSaveEvent) {
+          this.setAddTextHook(objectSaveEvent);
+          this.setValidationHook(objectSaveEvent);
+          this.setPostSaveHook(objectSaveEvent);
+        }
+      }
+
       this.controlApi.page.onPropertyChange(() => this.cd.markForCheck());
+      this.controlApi.control.state.onChange(() => this.cd.markForCheck());
       this.controlApi.page.onChange(() => this.cd.detectChanges());
     }
   }
@@ -116,7 +161,9 @@ export class PageEventHooksMobileComponent implements OnInit, OnDestroy {
    * If "showFail" property is set, the hook will show a failure message after an unsuccessful save.
    */
   private setPostSaveHook(
-    objectSaveEvent: HookableEvent<SaveEventPayload>
+    objectSaveEvent:
+      | HookableEvent<SaveEventPayload>
+      | IPageEvent<IPageEventData>
   ): void {
     const exec = this.controlApi.control.getControl().typeAttributes.showSuccess
       ? async () => {
@@ -139,7 +186,9 @@ export class PageEventHooksMobileComponent implements OnInit, OnDestroy {
    * Add a page event hook which aborts save if the specified text is not present in the fieldValue.
    */
   private setValidationHook(
-    objectSaveEvent: HookableEvent<SaveEventPayload>
+    objectSaveEvent:
+      | HookableEvent<SaveEventPayload>
+      | IPageEvent<IPageEventData>
   ): void {
     const order = this.HOOK_ORDER.validation;
     const typeAttrs = this.controlApi.control.getControl().typeAttributes;
@@ -163,7 +212,9 @@ export class PageEventHooksMobileComponent implements OnInit, OnDestroy {
    * Add a page event hook which inserts a prefix into the field before saving (if not already present)
    */
   private setAddTextHook(
-    objectSaveEvent: HookableEvent<SaveEventPayload>
+    objectSaveEvent:
+      | HookableEvent<SaveEventPayload>
+      | IPageEvent<IPageEventData>
   ): void {
     const order = this.HOOK_ORDER.addText;
 

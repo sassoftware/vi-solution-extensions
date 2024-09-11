@@ -1,17 +1,17 @@
 import { APP_INITIALIZER, Injector, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PageEventHooksMobileComponent } from './page-event-hooks-mobile.component';
 import { createCustomElement } from '@angular/elements';
 import { control } from './page-event-hooks-mobile.control';
 import {
   SmiWindow,
   isSasMobileWindowApi,
 } from '@sassoftware/mobile-investigator';
+import { PageEventHooksComponent } from '../shared/page-event-hooks.component';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, PageEventHooksMobileComponent],
-  exports: [PageEventHooksMobileComponent],
+  imports: [CommonModule, FormsModule, PageEventHooksComponent],
+  exports: [PageEventHooksComponent],
   providers: [
     {
       provide: APP_INITIALIZER,
@@ -20,7 +20,7 @@ import {
         return () => {
           customElements.define(
             control.directiveName || '',
-            createCustomElement(PageEventHooksMobileComponent, {
+            createCustomElement(PageEventHooksComponent, {
               injector: injector,
             })
           );

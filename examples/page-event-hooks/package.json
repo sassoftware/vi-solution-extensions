@@ -21,7 +21,7 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
-    "@sassoftware/mobile-investigator": "^4.2.0",
+    "@sassoftware/mobile-investigator": "^4.2.2",
     "@sassoftware/vi-api": "latest",
     "ngx-build-plus": "^17.0.0",
     "rxjs": "~7.8.0",
