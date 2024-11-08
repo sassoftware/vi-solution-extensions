@@ -8,8 +8,10 @@
 2. [Getting Started](./docs/pages/1-getting-started.md)
 3. [Adding Mobile Solution Extensions](./docs/pages/2-mobile-solutions.md)
 4. [Manually Uploading Bundles](./docs/pages/3-manual-uploading.md)
+5. [Debugging Solution Extensions Using Sourcemaps](./docs/pages/4-debugging-solution-extensions-using-sourcemaps.md)
 
 <!-- toc_end -->
+
 # Overview
 
 Solution extensions enable you to deploy new controls with custom functionality to an existing SAS Visual Investigator deployment. There are multiple tools available to ease the development and deployment of these solution extensions.
@@ -56,4 +58,4 @@ This project is licensed under this commercial [license](LICENSE.txt).
 
 # Additional Resources
 
--   SAS Visual Investigator API on [developer.sas.com](https://developer.sas.com/apis/vi/apiDocs/).
+-   SAS Visual Investigator API on [developer.sas.com](https://developer.sas.com/sdk/vi/apiDocs/).
