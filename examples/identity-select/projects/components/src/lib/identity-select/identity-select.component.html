@@ -1,0 +1,19 @@
+<div *ngIf="childNode" class="custom-identity-select">
+    <svi-labelled-control
+        [pageModel]="pageModel"
+        [childNode]="childNode"
+        [labelClass]="childNode.typeAttributes.inputWidthCSSClass"
+    >
+        <svi-identity-select
+            [model]="selectedIdentities"
+            (modelChanged)="onModelChanged($event)"
+            [title]="'Select users and groups'"
+            [selfSelectBtn]="childNode.typeAttributes.selfSelectBtn"
+            [selectionMode]="childNode.typeAttributes.selectionMode"
+            [ariaLabel]="'Select users and groups'"
+            [readOnly]="inViewMode"
+            [filter]="filterByGroups"
+            [isDisabled]="controlApi.control.state.disabled || inDesignMode"
+        ></svi-identity-select>
+    </svi-labelled-control>
+</div>

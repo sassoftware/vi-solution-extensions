@@ -1,0 +1,9 @@
+// Example of overriding styles:
+
+// .custom-identity-select ::ng-deep {
+//     .input-composite-button button:hover,
+//     .token-input-button button:hover {
+//         color: blue !important;
+//         cursor: pointer;
+//     }
+// }
