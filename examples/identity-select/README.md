@@ -1,6 +1,8 @@
 # Identity Select Solution - SVI Custom Elements
 
-TODO
+This example demonstrates how to create an identity select solution extension using the SVI Custom Elements API.
+
+Please refer to [@sassoftware/vi-api/elements](https://www.npmjs.com/package/@sassoftware/vi-api) for further guidance on which custom elements are provided by SAS Visual Investigator.
 
 ### Prerequisites
 

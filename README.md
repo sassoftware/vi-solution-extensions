@@ -9,6 +9,7 @@
 3. [Adding Mobile Solution Extensions](./docs/pages/2-mobile-solutions.md)
 4. [Manually Uploading Bundles](./docs/pages/3-manual-uploading.md)
 5. [Debugging Solution Extensions Using Sourcemaps](./docs/pages/4-debugging-solution-extensions-using-sourcemaps.md)
+6. [Using Existing Bearer Token For Upload](./docs/pages/5-using-existing-auth-token-for-upload.md)
 
 <!-- toc_end -->
 
