@@ -10,6 +10,7 @@
 4. [Manually Uploading Bundles](./3-manual-uploading.md)
 5. [Debugging Solution Extensions Using Sourcemaps](./4-debugging-solution-extensions-using-sourcemaps.md)
 6. [Using Existing Bearer Token For Upload](./5-using-existing-auth-token-for-upload.md)
+7. [Mobile Solution Extensions On Viya 3.5 (10.8)](./6-mobile-solution-extensions-10.8.md)
 
 <!-- toc_end -->
 

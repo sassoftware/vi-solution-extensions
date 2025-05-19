@@ -10,6 +10,7 @@
 4. [Manually Uploading Bundles](./3-manual-uploading.md)
 5. [Debugging Solution Extensions Using Sourcemaps](./4-debugging-solution-extensions-using-sourcemaps.md)
 6. [Using Existing Bearer Token For Upload](./5-using-existing-auth-token-for-upload.md)
+7. [Mobile Solution Extensions On Viya 3.5 (10.8)](./6-mobile-solution-extensions-10.8.md)
 
 <!-- toc_end -->
 # Manually Uploading Bundles
@@ -17,7 +18,7 @@
 The [@sassoftware/vi-solution-extension-upload](https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload) package enables developers to upload a bundled collection of solution extensions to a deployed instance of SAS Visual Investigator.
 
 ## Prerequisites
-- A deployed instance of SAS Visual Investigator 10.8 or later (SAS Viya 4 for Mobile development).
+- A deployed instance of SAS Visual Investigator 10.8 or later (extra steps are required when uploading mobile solution extensions to a 10.8 server, detailed [here](./6-mobile-solution-extensions-10.8.md)).
 - A JavaScript bundle containing solution extensions to upload.
 
 ## Use cases

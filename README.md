@@ -10,6 +10,7 @@
 4. [Manually Uploading Bundles](./docs/pages/3-manual-uploading.md)
 5. [Debugging Solution Extensions Using Sourcemaps](./docs/pages/4-debugging-solution-extensions-using-sourcemaps.md)
 6. [Using Existing Bearer Token For Upload](./docs/pages/5-using-existing-auth-token-for-upload.md)
+7. [Mobile Solution Extensions On Viya 3.5 (10.8)](./docs/pages/6-mobile-solution-extensions-10.8.md)
 
 <!-- toc_end -->
 
@@ -27,7 +28,7 @@ You must have access to a deployment of SAS Visual Investigator 10.8 or later to
 
 ### Mobile Solution Extensions
 
-SAS Mobile Investigator does not support custom controls in 10.8. You must have access to a deployment of SAS Visual Investigator on Viya 4 to use the documented tools.
+You must have access to a deployment of SAS Visual Investigator 10.8 or later to use the documented tools. If you are using SAS Visual Investigator 10.8, then there are extra steps when uploading mobile solution extensions which are detailed [here](./6-mobile-solution-extensions-10.8.md).
 
 ## Installation
 
