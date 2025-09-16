@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, Injector, NgModule } from "@angular/core";
+import { Injector, NgModule, inject, provideAppInitializer } from "@angular/core";
 import { CustomTextboxDesktopComponent } from "./custom-textbox-desktop.component";
 import { createCustomElement } from "@angular/elements";
 import { control } from "./custom-textbox-desktop.control";
@@ -8,10 +8,8 @@ import { SviWindow } from "@sassoftware/vi-api";
   imports: [CustomTextboxDesktopComponent],
   exports: [CustomTextboxDesktopComponent],
   providers: [
-    {
-      provide: APP_INITIALIZER,
-      multi: true,
-      useFactory: (injector: Injector) => {
+    provideAppInitializer(() => {
+        const initializerFn = ((injector: Injector) => {
         return () => {
           customElements.define(
             control.directiveName,
@@ -21,9 +19,9 @@ import { SviWindow } from "@sassoftware/vi-api";
           const sviWindow = window as SviWindow;
           sviWindow.sas.vi?.config.registerSolutionExtension(control);
         };
-      },
-      deps: [Injector]
-    }
+      })(inject(Injector));
+        return initializerFn();
+      })
   ]
 })
 export class CustomTextboxDesktopModule {}

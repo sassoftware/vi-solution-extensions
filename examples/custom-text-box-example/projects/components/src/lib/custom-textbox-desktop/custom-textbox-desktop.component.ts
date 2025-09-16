@@ -16,7 +16,6 @@ import { CustomTextBoxAttributes, multiLineRows } from "../shared/custom-textbox
 
 @Component({
     selector: "sol-custom-textbox-desktop",
-    standalone: true,
     templateUrl: "./custom-textbox-desktop.component.html",
     styleUrls: ["./custom-textbox-desktop.component.scss"],
     imports: [CommonModule, FormsModule],

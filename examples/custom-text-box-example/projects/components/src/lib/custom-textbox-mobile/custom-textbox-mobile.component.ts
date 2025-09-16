@@ -21,7 +21,6 @@ import { PageMode } from "@sassoftware/vi-api/page-model";
 
 @Component({
     selector: "mobile-sol-custom-textbox-mobile",
-    standalone: true,
     templateUrl: "./custom-textbox-mobile.component.html",
     imports: [CommonModule, FormsModule],
     styleUrls: ["./custom-textbox-mobile.component.scss"],

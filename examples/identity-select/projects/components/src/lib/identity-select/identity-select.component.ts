@@ -21,7 +21,6 @@ declare global {
 }
 
 @Component({
-    standalone: true,
     selector: "sol-identity-select",
     templateUrl: "./identity-select.component.html",
     styleUrl: "./identity-select.component.scss",

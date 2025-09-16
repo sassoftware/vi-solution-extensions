@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, Injector, NgModule } from "@angular/core";
+import { Injector, NgModule, inject, provideAppInitializer } from "@angular/core";
 import { CustomTextboxMobileComponent } from "./custom-textbox-mobile.component";
 import { createCustomElement } from "@angular/elements";
 import { control } from "./custom-textbox-mobile.control";
@@ -8,10 +8,8 @@ import { SmiWindow, isSasMobileWindowApi } from "@sassoftware/mobile-investigato
   imports: [CustomTextboxMobileComponent],
   exports: [CustomTextboxMobileComponent],
   providers: [
-    {
-      provide: APP_INITIALIZER,
-      multi: true,
-      useFactory: (injector: Injector) => {
+    provideAppInitializer(() => {
+        const initializerFn = ((injector: Injector) => {
         return () => {
           customElements.define(
             control.directiveName || "",
@@ -25,9 +23,9 @@ import { SmiWindow, isSasMobileWindowApi } from "@sassoftware/mobile-investigato
             smiWindow.sas.vi.config.registerSolutionExtension(control);
           }
         };
-      },
-      deps: [Injector]
-    }
+      })(inject(Injector));
+        return initializerFn();
+      })
   ]
 })
 export class CustomTextboxMobileModule {}

@@ -18,15 +18,14 @@ interface QrCodeAttributes {
 }
 
 @Component({
-  selector: 'qr-code',
-  templateUrl: './qr-code.component.html',
-  styleUrls: ["./qr-code.component.scss"],
-  standalone: true,
-  imports: [
-    NgIf,
-    QRCodeModule
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'qr-code',
+    templateUrl: './qr-code.component.html',
+    styleUrls: ["./qr-code.component.scss"],
+    imports: [
+        NgIf,
+        QRCodeModule
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QrCodeComponent implements OnInit {
   @Input() public childNode!: Control<QrCodeAttributes>;

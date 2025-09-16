@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, Injector, NgModule } from "@angular/core";
+import { Injector, NgModule, inject, provideAppInitializer } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { QrCodeComponent } from "./qr-code.component";
@@ -10,10 +10,8 @@ import { SviWindow } from "@sassoftware/vi-api";
   imports: [CommonModule, FormsModule, QrCodeComponent],
   exports: [QrCodeComponent],
   providers: [
-    {
-      provide: APP_INITIALIZER,
-      multi: true,
-      useFactory: (injector: Injector) => {
+    provideAppInitializer(() => {
+        const initializerFn = ((injector: Injector) => {
         return () => {
           customElements.define(
             control.directiveName,
@@ -23,9 +21,9 @@ import { SviWindow } from "@sassoftware/vi-api";
           const sviWindow = window as SviWindow;
           sviWindow.sas.vi?.config.registerSolutionExtension(control);
         };
-      },
-      deps: [Injector]
-    }
+      })(inject(Injector));
+        return initializerFn();
+      })
   ]
 })
 export class QrCodeModule {

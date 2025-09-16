@@ -27,11 +27,10 @@ import {
 import { pageEventHooksAttributes } from './page-event-hooks.model';
 
 @Component({
-  selector: 'sol-page-event-hooks',
-  standalone: true,
-  templateUrl: './page-event-hooks.component.html',
-  styleUrl: './page-event-hooks.component.scss',
-  imports: [CommonModule, FormsModule],
+    selector: 'sol-page-event-hooks',
+    templateUrl: './page-event-hooks.component.html',
+    styleUrl: './page-event-hooks.component.scss',
+    imports: [CommonModule, FormsModule]
 })
 export class PageEventHooksComponent implements OnInit, OnDestroy {
   @Input() controlApi!:
