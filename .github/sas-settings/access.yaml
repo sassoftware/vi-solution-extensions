@@ -1,0 +1,13 @@
+
+# Next Pipeline ADR 9: Individual collaborators cannot have the `admin` role.
+# Next Pipeline ADR 9: Individual collaborators are not allowed.
+# See: https://rndconfluence.sas.com/display/RNDDEVOPS/Next+Pipeline+-+ADR+9+-+GitHub+Repository+Access+Control
+teams:
+  - name: all
+    role: Read
+  - name: security_manager
+    role: Read
+  - name: svi-app-maintainers
+    role: Maintain
+  - name: svi-contributors
+    role: Write
