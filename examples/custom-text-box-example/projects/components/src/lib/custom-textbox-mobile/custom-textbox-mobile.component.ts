@@ -150,11 +150,13 @@ export class CustomTextboxMobileComponent implements OnInit, OnDestroy {
     @HostListener("validationfocus", ["$event.target"])
     /**
      * Sets focus on the controls input if existing.
-     * @param event Components host element.
+     * @param target The event target element.
      */
-    public focusInput(host: HTMLElement): void {
-        host.querySelector<HTMLElement>(
-            "input:enabled, textarea:enabled, select:enabled, .masking-button.edit"
-        )?.focus();
+    public focusInput(target: EventTarget | null): void {
+        if (target instanceof HTMLElement) {
+            target.querySelector<HTMLElement>(
+                "input:enabled, textarea:enabled, select:enabled, .masking-button.edit"
+            )?.focus();
+        }
     }
 }

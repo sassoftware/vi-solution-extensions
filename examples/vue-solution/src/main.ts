@@ -4,7 +4,7 @@ import { control } from './elements/text-input/text-input.control'
 import TextInputComponent from './elements/text-input/text-input.ce.vue'
 import { SviWindow } from '@sassoftware/vi-api';
 
-// Styles provided in compoennts prepended with .ce.vue are converted to inline
+// Styles provided in components prepended with .ce.vue are converted to inline
 // See: https://vuejs.org/guide/extras/web-components.html#sfc-as-custom-element
 
 try {

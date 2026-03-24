@@ -16,7 +16,7 @@ You must have access to a deployment of SAS Visual Investigator on SAS Viya 4 to
 * [app.module.ts](projects/components/src/app.module.ts) - Details how the solution can register external document managers with SAS Visual Investigator. It uses the SAS Visual Investigator API to register any document managers configured in [document-manager-integration.ts](projects/components/src/lib/document-manager-integration.ts).
 
 
-## How to  use
+## How to use
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 17.
 
 # Setup
@@ -30,7 +30,7 @@ Run `npm run watch` to watch for new builds and automatically upload them to the
 
 ### Build
 
-Run `npm run watch` to build the project and upload it to the server.
+Run `npm run build` to build the project and upload it to the server.
 
 ### Further help
 

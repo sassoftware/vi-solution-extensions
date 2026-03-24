@@ -28,7 +28,7 @@ npm run build
 -   [./vite.config.ts](./vite.config.ts) - The config for the Vite JavaScript Compiler. Here, Vite has been configured to automatically upload a single javascript bundle after each successful build. Using scss preprocessorOptions, Vite also automatically imports a shared stylesheet hosted externally on the server running SAS Visual Investigator.
 -   [./src/main.ts](./src/main.ts) - The entry-point for the solution extension. This contains the text-input example control and is registered as a solution extension using the vi-api.
 -   [./src/elements/text-input/index.ts](./src/elements/text-input) - The Solution Extension Control Metadata used to register the control with SAS Visual Investigator. Here, we can define a number of configurable TypeAttributes our control will use, as well as label resource strings, and other necessary properties required when registering a Solution Extension.
--   [./src/elements/text-input/index.ts](./src/elements/text-input) - A basic text-input example component written in Vue using the [Vue Composition API](https://vuejs.org/guide/extras/composition-api-faq.html). When mounted, this component registers a number of event hooks via the vi-api, including page and control state onChange hooks. The component HTML template uses classes available in the sas-shared-styles stylesheet.
+-   [./src/elements/text-input/index.ts](./src/elements/text-input) - A basic text-input example component written in Vue using the [Vue Composition API](https://vuejs.org/guide/extras/composition-api-faq.html). When mounted, this component registers a number of event hooks via the vi-api, including page and control state onChange hooks.
 
 ### Recommended Setup
 

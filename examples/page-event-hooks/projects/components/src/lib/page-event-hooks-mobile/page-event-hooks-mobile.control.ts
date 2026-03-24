@@ -1,7 +1,7 @@
-import { Control } from '@sassoftware/mobile-investigator/src/app/mobile/api/config';
+import { SmiSolutionExtension } from '@sassoftware/mobile-investigator';
 import { ControlType } from '@sassoftware/vi-api/config';
 
-export const control: Control = {
+export const control: SmiSolutionExtension = {
   category: 'MobileObjectControls',
   controlDescription: {
     defaultText: 'pageEventHooks Mobile Example',
