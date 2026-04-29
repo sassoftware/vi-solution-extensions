@@ -74,5 +74,10 @@ npm i -g @sassoftware/vi-solution-extension-upload
 node -e "require('@sassoftware/vi-solution-extension-upload/src/uploader').upload()"
 ```
 
+## Versioning
+
+Solution extensions have a numeric version which is automatically incremented each time an extension bundle is uploaded.
+On SAS Viya 4, this version ensures that the browser retrieves the latest script on refresh without requiring users to clear their cache.
+
 ## Additional resources
 For more information about the vi-solution-extension-upload package, see https://www.npmjs.com/package/@sassoftware/vi-solution-extension-upload.
